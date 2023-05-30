@@ -4,6 +4,7 @@ import IconButton from "../components/ui/IconButton";
 import { GlobalStyles } from "../constants/styles";
 import { ExpensesContext } from "../store/expenses-context";
 import ExpenseForm from "../components/ManageExpense/ExpenseForm";
+import { storeExpense } from "../util/http";
 
 export default function ManageExpenses({ route, navigation }) {
   const expensesCtx = useContext(ExpensesContext);
@@ -37,6 +38,7 @@ export default function ManageExpenses({ route, navigation }) {
         expenseData
       );
     } else {
+      storeExpense(expenseData)
       expensesCtx.addExpense(expenseData);
     }
     navigation.goBack();
