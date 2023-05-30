@@ -2,8 +2,8 @@ import { View, StyleSheet } from "react-native";
 import React, { useContext, useLayoutEffect } from "react";
 import IconButton from "../components/ui/IconButton";
 import { GlobalStyles } from "../constants/styles";
-import Button from "../components/ui/Button";
 import { ExpensesContext } from "../store/expenses-context";
+import ExpenseForm from "../components/ManageExpense/ExpenseForm";
 
 export default function ManageExpenses({ route, navigation }) {
   const expensesCtx = useContext(ExpensesContext);
@@ -26,36 +26,24 @@ export default function ManageExpenses({ route, navigation }) {
     navigation.goBack();
   }
 
-  function confirmHandler() {
+  function confirmHandler(expenseData) {
     if (isEditing) {
       expensesCtx.updateExpense(
         editedExpenseId,
-        {
-          description: 'Test!!!!',
-          amount: 29.99,
-          date: new Date('2022-05-20'),
-        }
+        expenseData
       );
     } else {
-      expensesCtx.addExpense({
-        description: 'Test',
-        amount: 19.99,
-        date: new Date('2022-05-19'),
-      });
+      expensesCtx.addExpense(expenseData);
     }
     navigation.goBack();
   }
 
     return (
       <View style={styles.container}>
-        <View style={styles.buttons}>
-          <Button style={styles.button}  mode="flat" onPressed={cancelHandler}>
-            Cancel
-          </Button>
-          <Button style={styles.button} onPressed={confirmHandler}>
-            {isEditing ? 'Update' : 'Add'}
-          </Button>
-        </View>
+        <ExpenseForm submitButtonLabel={isEditing ? 'Update' : 'Add'} 
+            onCancel={cancelHandler}
+            onSubmit={confirmHandler}
+            />
         {isEditing && (
           <View style={styles.deleteContainer}>
             <IconButton
@@ -83,13 +71,4 @@ export default function ManageExpenses({ route, navigation }) {
       borderTopColor: GlobalStyles.colors.primary200,
       alignItems: "center",
     },
-    buttons: {
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    button:{
-      minWidth:120,
-      marginHorizontal: 8
-    }
   });
