@@ -3,7 +3,7 @@
 A simple mobile application built with the intention of providing a clean, responsive and attractive UI for entering and managing expenses.
 
 ## Installation
-To run the Foodie Recipes app on your local machine, follow these steps:
+To run the  app on your local machine, follow these steps:
 
 Make sure you have Node.js and npm installed on your system.
 
@@ -16,7 +16,7 @@ Navigate to the project directory:
 
 bash
 Copy code
-cd foodie-recipes
+cd Expense-Tracker
 Install the dependencies by running the following command:
 
 ### Copy code
