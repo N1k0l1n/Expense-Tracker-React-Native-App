@@ -1,16 +1,8 @@
 # Expense-Tracker- React Native App
 
-Foodie Recipes is a mobile application built with React Native that provides a wide range of delicious food recipes along with step-by-step cooking instructions. Whether you're a seasoned chef or a cooking enthusiast, Foodie Recipes is the perfect app to explore and try new dishes.
+A simple mobile application built with the intention of providing a clean, responsive and attractive UI for entering and managing expenses.
 
-## Features
-Browse through a vast collection of food recipes from various cuisines.
-Search for recipes based on ingredients, dish names, or cooking time.
-View detailed recipe information including ingredients, cooking instructions, and serving sizes.
-Save your favorite recipes for quick access.
-Create a personalized profile to keep track of your saved recipes and cooking preferences.
-Get cooking tips and tricks from expert chefs.
-Share recipes with friends and family via social media or messaging apps.
-Installation
+## Installation
 To run the Foodie Recipes app on your local machine, follow these steps:
 
 Make sure you have Node.js and npm installed on your system.
@@ -80,4 +72,3 @@ The Foodie Recipes app is open-source software licensed under the MIT License.
 ## Contact
 If you have any questions, suggestions, or feedback, feel free to contact us at nikolinandoni80@gmail.com.
 
-Happy cooking with Foodie Recipes!
